@@ -1340,7 +1340,9 @@
             <a href="https://poole.ed.jp/guide/education/">特色教育</a>
           </div><!-- /.c-btnList -->
         </div><!-- /.content -->
-        <a href="https://lkcodetest.sakura.ne.jp/testsite/guide/education/"><img src="https://poole.ed.jp/wp/wp-content/themes/poole/assets/img/tokusyoku/ico_totop.svg" alt="" class="p-totop"></a>
+        <a href="https://lkcodetest.sakura.ne.jp/testsite/guide/education/" id="back-to-top">
+          <img src="https://poole.ed.jp/wp/wp-content/themes/poole/assets/img/tokusyoku/ico_totop.svg" alt="" class="p-totop ">
+        </a>
 
         </section><!-- /.page -->
 
@@ -1370,7 +1372,7 @@
 
 
 
-      <!-- <section class="l-conversion">
+      <section class="l-conversion">
         <div class="l-conversion__request">
           <h2>
             資料請求
@@ -1604,7 +1606,7 @@
         <p class="l-footer__othernav__copy">
           Copyright &copy; 2024 POOLE GAKUIN Junior & Senior High Schools. All rights reserved.
         </p>
-      </footer> -->
+      </footer>
 
 
 
@@ -1647,6 +1649,11 @@
   <script type="text/javascript" src="https://poole.ed.jp/wp/wp-content/themes/poole/assets/js/common.js?05&amp;ver=6.5.5" id="base-js"></script>
   <!-- //aタグいれこ -->
   <script>
+
+
+
+
+
     $('.js-link').on('click', function(e) {
       e.stopPropagation();
       e.preventDefault();
@@ -1675,6 +1682,31 @@
         });
       }
     });
+  </script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script>
+    $(document).ready(function() {
+    var $backToTop = $('#back-to-top');
+
+    // スクロールイベントのリスナー
+    // $(window).scroll(function() {
+    //     if ($(window).scrollTop() > 300) {
+    //         $backToTop.fadeIn();
+    //     } else {
+    //         $backToTop.fadeOut();
+    //     }
+    // });
+
+    // クリックイベントのリスナー
+     // クリックイベントのリスナー
+     $backToTop.on('click', function(e) {
+            e.preventDefault();
+            $('html, body').animate({ scrollTop: 0 }, {
+                duration: 600,
+                easing: 'easeOutQuad' // jQuery UIのイージング関数
+            });
+        });
+});
   </script>
 
 
