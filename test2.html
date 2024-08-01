@@ -1706,6 +1706,14 @@
                 easing: 'easeOutQuad' // jQuery UIのイージング関数
             });
         });
+
+        //通常のクリック時
+  $('a[href^="#"]').click(function() {
+    var href= $(this).attr("href");
+    var hash = href == "#" || href == "" ? 'html' : href;
+    scrollToAnker(hash);
+    return false;
+  });
 });
   </script>
 
