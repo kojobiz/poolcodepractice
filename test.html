@@ -814,6 +814,9 @@ gtag("config", "GT-PB63KG4G");
 
     </div><!-- /.l-footer__othernav -->
   </div><!-- /.l-footer__inner -->
+  <a href="#">
+    <img src="https://poole.ed.jp/wp/wp-content/themes/poole/assets/img/tokusyoku/ico_totop.svg" alt="" class="p-totop">
+  </a>
   <p class="l-footer__othernav__copy">
         Copyright &copy; 2024 POOLE GAKUIN Junior & Senior High Schools. All rights reserved.
       </p><!-- /.l-footer__othernav__copy -->
@@ -866,6 +869,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var isTablet = !isSmartPhone && (
     ua.indexOf('iPad') > -1 ||
     (ua.indexOf('Macintosh') > -1 && 'ontouchend' in document) ||
+
     ua.indexOf('Android') > -1
   )
   if (isTablet) {
@@ -882,6 +886,29 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 </script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      var $backToTop = $('#back-to-top');
+
+      $backToTop.on('click', function(e) {
+        e.preventDefault();
+        $('html, body').animate({ scrollTop: 0 }, {
+            duration: 600,
+            easing: 'easeOutQuad' // jQuery UIのイージング関数
+        });
+      });
+
+      //通常のクリック時
+      $('a[href^="#"]').click(function() {
+        var href= $(this).attr("href");
+        var hash = href == "#" || href == "" ? 'html' : href;
+        scrollToAnker(hash);
+        return false;
+      });
+    });
+  </script>
+
 
 
 
